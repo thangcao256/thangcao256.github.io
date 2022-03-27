@@ -1,1 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        .gm-control-active>img {
+            box-sizing: content-box;
+            display: none;
+            left: 50%;
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .gm-control-active>img:nth-child(1) {
+            display: block
+        }
+
+        .gm-control-active:hover>img:nth-child(1),
+        .gm-control-active:active>img:nth-child(1),
+        .gm-control-active:disabled>img:nth-child(1) {
+            display: none
+        }
+
+        .gm-control-active:hover>img:nth-child(2),
+        .gm-control-active:active>img:nth-child(3),
+        .gm-control-active:disabled>img:nth-child(4) {
+            display: block
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="./index_files/css">
+    <link type="text/css" rel="stylesheet" href="./index_files/css(1)">
+    <style>
+        .gm-ui-hover-effect {
+            opacity: .6
+        }
+
+        .gm-ui-hover-effect:hover {
+            opacity: 1
+        }
+
+        @media (forced-colors:active) and (prefers-color-scheme:dark) {
+            .gm-ui-hover-effect>img {
+                filter: invert(1)
+            }
+        }
+    </style>
+    <style>
+        .gm-style .gm-style-cc a,
+        .gm-style .gm-style-cc button,
+        .gm-style .gm-style-cc span,
+        .gm-style .gm-style-mtc div {
+            font-size: 10px;
+            box-sizing: border-box
+        }
+
+        .gm-style .gm-style-cc a,
+        .gm-style .gm-style-cc button,
+        .gm-style .gm-style-cc span {
+            outline-offset: 3px
+        }
+    </style>
+    <style>
+        @media print {
+
+            .gm-style .gmnoprint,
+            .gmnoprint {
+                display: none
+            }
+        }
+
+        @media screen {
+
+            .gm-style .gmnoscreen,
+            .gmnoscreen {
+                display: none
+            }
+        }
+    </style>
+    <style>
+        .dismissButton {
+            background-color: #fff;
+            border: 1px solid #dadce0;
+            color: #1a73e8;
+            border-radius: 4px;
+            font-family: Roboto, sans-serif;
+            font-size: 14px;
+            height: 36px;
+            cursor: pointer;
+            padding: 0 24px
+        }
+
+        .dismissButton:hover {
+            background-color: rgba(66, 133, 244, 0.04);
+            border: 1px solid #d2e3fc
+        }
+
+        .dismissButton:focus {
+            background-color: rgba(66, 133, 244, 0.12);
+            border: 1px solid #d2e3fc;
+            outline: 0
+        }
+
+        .dismissButton:focus:not(:focus-visible) {
+            background-color: #fff;
+            border: 1px solid #dadce0;
+            outline: none
+        }
+
+        .dismissButton:focus-visible {
+            background-color: rgba(66, 133, 244, 0.12);
+            border: 1px solid #d2e3fc;
+            outline: 0
+        }
+
+        .dismissButton:hover:focus {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd
+        }
+
+        .dismissButton:hover:focus:not(:focus-visible) {
+            background-color: rgba(66, 133, 244, 0.04);
+            border: 1px solid #d2e3fc
+        }
+
+        .dismissButton:hover:focus-visible {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd
+        }
+
+        .dismissButton:active {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd;
+            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15)
+        }
+
+        .dismissButton:disabled {
+            background-color: #fff;
+            border: 1px solid #f1f3f4;
+            color: #3c4043
+        }
+    </style>
+    <style>
+        .gm-style-moc {
+            background-color: rgba(0, 0, 0, 0.45);
+            pointer-events: none;
+            text-align: center;
+            transition: opacity ease-in-out
+        }
+
+        .gm-style-mot {
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 22px;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%)
+        }
+    </style>
+    <style>
+        .gm-style img {
+            max-width: none;
+        }
+
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Trimatrix Lab">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+
+    <title>Hi ! I'm Thang Cao</title>
+    <link rel="icon" href="./index_files/avt.jpg">
+
+    <!--APPLE TOUCH ICON-->
+    <link rel="apple-touch-icon" href="http://trimatrixlab.com/store/flatrica/images/site/apple-touch-icon.png">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+    <link href="./index_files/css(3)" rel="stylesheet" type="text/css">
+
+
+    <!-- MATERIAL ICON FONT -->
+    <link href="./index_files/icon" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link href="./index_files/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- ANIMATION -->
+    <link href="./index_files/animate.min.css" rel="stylesheet">
+
+    <!-- MAGNIFICENT POPUP -->
+    <link href="./index_files/magnific-popup.css" rel="stylesheet">
+
+    <!-- SWIPER -->
+    <link href="./index_files/swiper.min.css" rel="stylesheet">
+
+
+    <!-- MATERIALIZE -->
+    <link href="./index_files/materialize.css" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CUSTOM STYLE -->
+    <link href="./index_files/style_dark_dark.css" id="switch_style" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/bb96c34b1a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/common.js.download">
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/util.js.download">
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/marker.js.download">
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/map.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/overlay.js.download">
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/stats.js.download">
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/onion.js.download">
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="./index_files/controls.js.download">
+    </script>
+    <style>
+        #map-card {
+            opacity: 1 !important;
+            overflow: visible !important
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--==========================================
+                  PRE-LOADER
+===========================================-->
+    <div id="loading" style="display: none;">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="box-holder animated bounceInDown">
+                    <span class="load-box"><span class="box-inner"></span></span>
+                </div>
+                <!-- NAME & STATUS -->
+                <div class="text-holder text-center">
+                    <h2>Thang Cao</h2>
+                    <h6>Mobile Developer &amp; Font-end Developer</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--==========================================
+                    HEADER
+===========================================-->
+    <header id="home">
+        <nav id="theMenu" class="menu">
+
+            <!--MENU-->
+            <div id="menu-options" class="menu-wrap">
+
+                <!--PERSONAL LOGO-->
+                <div class="logo-flat">
+                    <img alt="personal-logo" class="img-responsive"
+                        src="./index_files/avt.jpg">
+                </div>
+                <br>
+
+                <!--OPTIONS-->
+                <a href="#home"><i
+                        class="title-icon fa fa-user"></i>Home</a>
+                <a href="#about"><i
+                        class="title-icon fa fa-dashboard"></i>About</a>
+                <a href="#education"><i
+                        class="title-icon fa fa-graduation-cap"></i>Education</a>
+                <a href="#skills"><i
+                        class="title-icon fa fa-sliders"></i>Skills</a>
+                <a href="l#experience"><i
+                        class="title-icon fa fa-suitcase"></i>Experience</a>
+                <a href="#portfolios"><i
+                        class="title-icon fa fa-archive"></i>Project Images</a>
+                <a href="#interest"><i
+                        class="title-icon fa fa-heart"></i>Interest</a>
+                <a href="#blog"><i
+                        class="title-icon fa fa-pencil-square"></i>Blog</a>
+                <a href="#contact"><i
+                        class="title-icon fa fa-envelope"></i>Thank you!</a>
+            </div>
+
+            <!-- MENU BUTTON -->
+            <div id="menuToggle">
+                <div class="toggle-normal">
+                    <i class="material-icons top-bar"></i>
+                    <i class="fa-solid fa-bars"></i>
+                    <!-- <i class="material-icons middle-bar">remove</i>
+                <i class="material-icons bottom-bar">remove</i> -->
+                </div>
+            </div>
+        </nav>
+
+        <!--HEADER BACKGROUND-->
+        <div class="header-background section"></div>
+
+    </header>
+
+
+    <!--==========================================
+                   V-CARD
+===========================================-->
+    <div id="v-card-holder" class="section" data-sr-id="52"
+        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                    <!-- V-CARD -->
+                    <div id="v-card" class="card">
+
+                        <!-- PROFILE PICTURE -->
+                        <div id="profile" class="right">
+                            <img alt="profile-image" class="img-responsive"
+                                src="./index_files/avt.jpg">
+                            <div class="slant"></div>
+
+                            <!--EMPTY PLUS BUTTON-->
+                            <!--<div class="btn-floating btn-large add-btn"><i class="material-icons">add</i></div>-->
+
+                            <!--VIDEO PLAY BUTTON-->
+
+                        </div>
+                        <!--VIDEO CLOSE BUTTON-->
+                        <div id="close-btn" class="btn-floating icon-close">
+                            <i class="fa fa-close"></i>
+                        </div>
+
+                        <div class="card-content">
+
+                            <!-- NAME & STATUS -->
+                            <div class="info-headings">
+                                <h4 class="text-uppercase left">Thang Cao</h4>
+                                <h6 class="text-capitalize left">Mobile Developer &amp; Font-end Developer</h6>
+                            </div>
+
+                            <!-- CONTACT INFO -->
+                            <div class="infos">
+                                <ul class="profile-list">
+                                    <li class="clearfix">
+                                        <span class="title"><i class="fa-solid fa-envelope" style="font-size: 18px;"> </i></span>
+                                        <span class="content">minhthang2506.it@gmail.com</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="title"><i class="fa-brands fa-github" style="font-size: 18px;"> </i></span>
+                                        <span class="content">github.com/thangcao256</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="title"><i class="fa-brands fa-facebook" style="font-size: 18px;"> </i></span>
+                                        <span class="content">fb.com/thangcao256</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="title"><i class="fa-solid fa-phone" style="font-size: 18px;"> </i></span>
+                                        <span class="content">+84 376701749</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="title"><i class="fa-solid fa-location-dot" style="font-size: 18px;"> </i></span>
+                                        <span class="content">Ho Chi Minh City, Viet Nam</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <!--LINKS-->
+                            <div class="links">
+                                <!-- FACEBOOK-->
+                                <a href="https://www.facebook.com/thangcao256/" id="first_one"
+                                    class="social btn-floating indigo"><i class="fa fa-facebook"></i></a>
+                                <!-- TWITTER-->
+                                <a href=""
+                                    class="social  btn-floating blue"><i class="fa fa-twitter"></i></a>
+                                <!-- GOOGLE+-->
+                                <a href="https://www.youtube.com/channel/UCqKztzZgXflWqZw66B5UJ5Q"
+                                    class="social  btn-floating red"><i class="fa fa-youtube"></i></a>
+                                <!-- LINKEDIN-->
+                                <a href="https://www.instagram.com/thangcao256/"
+                                    class="social  btn-floating blue darken-3"><i class="fa-brands fa-instagram"></i></a>
+                                <!-- RSS-->
+                                <a href="https://zalo.me/0376701749"
+                                    class="social  btn-floating blue darken-3"><i class="fa-brands fa-facebook-messenger"></i></a>
+                            </div>
+                        </div>
+                        <!--HTML 5 VIDEO-->
+                        <video id="html-video" class="video hidden" poster="images/poster/poster.jpg" controls="">
+                            <!--SERVER HOSTED VIDEO-->
+                            <source src="videos/b.webm" type="video/webm">
+                            <source src="videos/a.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==========================================
+                   ABOUT
+===========================================-->
+    <div id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- DETAILS -->
+                    <div id="about-card" class="card" data-sr-id="49"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s; transition: box-shadow 0.25s ease 0s, transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s; ">
+                        <div class="card-content">
+                            <!-- ABOUT PARAGRAPH -->
+                            <p>
+                                Hello! My name is Cao Minh Thang. As a fresh graduate, HUTECH University. My major is Information Technology - Software Engineering. I have a passion for mobile application programming. More than that, my biggest desire in career is to become a cross-platform mobile app developer.
+                            </p>
+                        </div>
+
+                        <!-- BUTTONS -->
+                        <div id="about-btn" class="card-action">
+                            <div class="about-btn">
+                                <!-- DOWNLOAD CV BUTTON -->
+                                <a href="https://drive.google.com/uc?id=1JDqo3FfiEWLl8Lwu-JzOTK7K5HF3JwF4&export=download"
+                                    class="btn waves-effect">Download CV</a>
+                                <!-- CONTACT BUTTON -->
+                                <a href="#"
+                                    class="btn waves-effect">Contact Me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--==========================================
+                   EDUCATION
+===========================================-->
+    <section id="education" class="section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <div class="section-title">
+                <h4 class="text-uppercase text-center"><img src="./index_files/book.png"
+                        alt="demo" data-sr-id="1"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">Education
+                </h4>
+            </div>
+
+            <div id="timeline-education">
+
+                
+
+                <!-- SECOND TIMELINE -->
+                <div class="timeline-block">
+                    <!-- DOT -->
+                    <div class="timeline-dot" data-sr-id="4"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <h6>H</h6>
+                    </div>
+                    <!-- TIMELINE CONTENT -->
+                    <div class="card timeline-content" data-sr-id="5"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <!-- TIMELINE TITLE -->
+                            <h6 class="timeline-title">HUTECH UNIVERSITY</h6>
+                            <!-- TIMELINE TITLE INFO -->
+                            <div class="timeline-info">
+                                <h6>
+                                    <small>Student</small>
+                                </h6>
+                                <h6>
+                                    <small>Sep 2018 - Apr 2022</small>
+                                </h6>
+                            </div>
+                            <!-- TIMELINE PARAGRAPH -->
+                            <p>
+                                Major: Information technology
+                            </p>
+                            <p>
+                                GPA: 3.46 / 4.0
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--==========================================
+                   SKILLS
+===========================================-->
+    <section id="skills" class="section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <div class="section-title">
+                <h4 class="text-uppercase text-center"><img src="./index_files/mixer.png"
+                        alt="demo" data-sr-id="14"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">Skills
+                </h4>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div id="skills-card" class="card" data-sr-id="15"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-4 col-xs-12">
+                                    <!-- FIRST SKILL SECTION -->
+                                    <div class="skills-title">
+                                        <h6 class="text-center">Professional</h6>
+                                    </div>
+                                    <!-- FIRST SKILL BAR -->
+                                    <div class="skillbar" data-percent="85%">
+                                        <div class="skillbar-title"><span>HTML5</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 85%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="53"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                    <!-- SECOND SKILL BAR  -->
+                                    <div class="skillbar" data-percent="85%">
+                                        <div class="skillbar-title"><span>CSS4</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 85%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="54"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                    <!-- THIRD SKILL BAR  -->
+                                    <div class="skillbar" data-percent="85%">
+                                        <div class="skillbar-title"><span>Java</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 85%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="55"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                    <!-- FOURTH SKILL BAR  -->
+                                    <div class="skillbar" data-percent="80%">
+                                        <div class="skillbar-title"><span>SQL</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 80%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="56"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 col-sm-4 col-xs-12">
+                                    <!-- SECOND SKILL SECTION -->
+                                    <div class="skills-title">
+                                        <h6 class="text-center">Personal</h6>
+                                    </div>
+                                    <!-- FIRST SKILL BAR -->
+                                    <div class="skillbar" data-percent="85%">
+                                        <div class="skillbar-title"><span>Leader</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 85%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="57"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                    <!-- SECOND SKILL BAR  -->
+                                    <div class="skillbar" data-percent="95%">
+                                        <div class="skillbar-title"><span>Teamwork</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 95%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="58"></div>
+                                        <div class="skill-bar-percent">95%</div>
+                                    </div>
+                                    <!-- THIRD SKILL BAR  -->
+                                    <div class="skillbar" data-percent="80%">
+                                        <div class="skillbar-title"><span>Creativity</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 80%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="59"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- FOURTH SKILL BAR  -->
+                                    <div class="skillbar" data-percent="99%">
+                                        <div class="skillbar-title"><span>Dedication</span></div>
+                                        <div class="skillbar-bar"
+                                            style="width: 99%;; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; transition: transform 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s, opacity 1.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0.3s; "
+                                            data-sr-id="60"></div>
+                                        <div class="skill-bar-percent">99%</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--==========================================
+                   EXPERIENCE
+===========================================-->
+    <section id="experience" class="section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <div class="section-title">
+                <h4 class="text-uppercase text-center"><img src="./index_files/layers.png"
+                        alt="demo" data-sr-id="16"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">Experience
+                </h4>
+            </div>
+
+            <div id="timeline-experience">
+
+                <!-- FIRST TIMELINE -->
+                <div class="timeline-block">
+                    <!-- DOT -->
+                    <div class="timeline-dot" data-sr-id="17"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <h6>S</h6>
+                    </div>
+                    <!-- TIMELINE CONTENT -->
+                    <div class="card timeline-content" data-sr-id="18"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <!-- TIMELINE TITLE -->
+                            <h6 class="timeline-title">SENIOR</h6>
+                            <!-- TIMELINE TITLE INFO -->
+                            <div class="timeline-info">
+                                <h6>
+                                    <small>Hutech - Infomation Technology</small>
+                                </h6>
+                                <h6>
+                                    <small>Sep 2021 - Present</small>
+                                </h6>
+                            </div>
+                            <!-- TIMELINE PARAGRAPH -->
+                            <p>
+                                Design android application using JAVA
+                            </p>
+                            <p>
+                                Design web application using PHP                                
+                            </p>
+                            <p>                               
+                                Use testing tools like Katalon, Bugzilla      
+                            </p>
+                            <p>
+                                Using project management tools, software like Jira
+                            </p>
+                            <p>                                
+                                Using a version management system like Git
+                            </p>
+                            <!-- BUTTON TRIGGER MODAL -->
+                            <a href="#" class="modal-dot"
+                                data-toggle="modal" data-target="#myModal-4">
+                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECOND TIMELINE -->
+                <div class="timeline-block">
+                    <!-- DOT -->
+                    <div class="timeline-dot" data-sr-id="19"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <h6>J</h6>
+                    </div>
+                    <!-- TIMELINE CONTENT -->
+                    <div class="card timeline-content" data-sr-id="20"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <!-- TIMELINE TITLE -->
+                            <h6 class="timeline-title">JUNIOR</h6>
+                            <!-- TIMELINE TITLE INFO -->
+                            <div class="timeline-info">
+                                <h6>
+                                    <small>Hutech - Infomation Technology</small>
+                                </h6>
+                                <h6>
+                                    <small>Sep 2019 - May 2018</small>
+                                </h6>
+                            </div>
+                            <!-- TIMELINE PARAGRAPH -->
+                            <p>
+                                Designing desktop applications using C#, JAVA
+                            </p>
+                            <p>
+                                Design web application using C#(ASP .NET)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THIRD TIMELINE -->
+                <div class="timeline-block">
+                    <!-- DOT -->
+                    <div class="timeline-dot" data-sr-id="21"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <h6>S</h6>
+                    </div>
+                    <!-- TIMELINE CONTENT -->
+                    <div class="card timeline-content" data-sr-id="22"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <!-- TIMELINE TITLE -->
+                            <h6 class="timeline-title">SOPHOMORE</h6>
+                            <!-- TIMELINE TITLE INFO -->
+                            <div class="timeline-info">
+                                <h6>
+                                    <small>Hutech - Infomation Technology</small>
+                                </h6>
+                                <h6>
+                                    <small>Sep 2019 - May 2018</small>
+                                </h6>
+                            </div>
+                            <!-- TIMELINE PARAGRAPH -->
+                            <p>
+                                Analysis and design of information technology systems
+                            </p>
+                            <p>
+                                Database Design with MySQL, SQL SERVER, phpMyAdmin,...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOURTH TIMELINE -->
+                <div class="timeline-block">
+                    <!-- DOT -->
+                    <div class="timeline-dot" data-sr-id="23"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <h6>F</h6>
+                    </div>
+                    <!-- TIMELINE CONTENT -->
+                    <div class="card timeline-content" data-sr-id="24"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <!-- TIMELINE TITLE -->
+                            <h6 class="timeline-title">FRESHMAN</h6>
+                            <!-- TIMELINE TITLE INFO -->
+                            <div class="timeline-info">
+                                <h6>
+                                    <small>Hutech - Infomation Technology</small>
+                                </h6>
+                                <h6>
+                                    <small>Sep 2018 - May 2019</small>
+                                </h6>
+                            </div>
+                            <!-- TIMELINE PARAGRAPH -->
+                            <p>
+                                Basic knowledge of programming and math
+                            </p>
+                            <!-- BUTTON TRIGGER MODAL -->
+                            <a href="#" class="modal-dot"
+                                data-toggle="modal" data-target="#myModal-5">
+                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--==========================================
+                   ACTIVITIES
+===========================================-->
+    <section id="activities" class="section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <div class="section-title">
+                <h4 class="text-uppercase text-center"><img src="./index_files/activities-removebg-preview.png"
+                        alt="demo" data-sr-id="16"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">Activities
+                </h4>
+            </div>
+
+            <div id="timeline-experience">
+
+                <!-- FIRST TIMELINE -->
+                <div class="timeline-block">
+                    <!-- DOT -->
+                    <div class="timeline-dot" data-sr-id="17"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <h6>S</h6>
+                    </div>
+                    <!-- TIMELINE CONTENT -->
+                    <div class="card timeline-content" data-sr-id="18"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <!-- TIMELINE TITLE -->
+                            <h6 class="timeline-title">Student</h6>
+                            <!-- TIMELINE TITLE INFO -->
+                            <div class="timeline-info">
+                                <h6>
+                                    <small>Hutech - Infomation Technology</small>
+                                </h6>
+                                <h6>
+                                    <small>Sep 2018 - Present</small>
+                                </h6>
+                            </div>
+                            <!-- TIMELINE PARAGRAPH -->
+                            <p>
+                                Successfully completing the duties of The Class Monitor over the years
+                            </p>
+                            <p>
+                                Participating in many volunteering and extra-curricular activities of the Faculty, University
+                            </p>
+                            <p>                               
+                                Won the Student of 5 Merits (SV5T) title for many years in a row        
+                            </p>
+                            <p>                               
+                                Participate in many academic competitions: HUTECH IT GOT TALENT Final Round (2022)...    
+                            </p>
+                            <!-- BUTTON TRIGGER MODAL -->
+                            <a href="#" class="modal-dot"
+                                data-toggle="modal" data-target="#myModal-4">
+                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECOND TIMELINE -->
+                <div class="timeline-block">
+                    <!-- DOT -->
+                    <div class="timeline-dot" data-sr-id="19"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <h6>C</h6>
+                    </div>
+                    <!-- TIMELINE CONTENT -->
+                    <div class="card timeline-content" data-sr-id="20"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                        <div class="card-content">
+                            <!-- TIMELINE TITLE -->
+                            <h6 class="timeline-title">Club Vice Chairman</h6>
+                            <!-- TIMELINE TITLE INFO -->
+                            <div class="timeline-info">
+                                <h6>
+                                    <small>HUTECH - KEIKO CLUB - VJIT</small>
+                                </h6>
+                                <h6>
+                                    <small>Sep 2018 - May 2020</small>
+                                </h6>
+                            </div>
+                            <!-- TIMELINE PARAGRAPH -->
+                            <p>
+                                Successfully completed the duties of Vice Chairman of the Keiko club in 2019 - 2020
+                            </p>
+                            <p>
+                                Excellently completed the position of Co-leader of KEIKO Club Communication & Event in 2018 - 2019
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--==========================================
+                  MODALS
+===========================================-->
+    <section>
+        <!--MODAL ONE-->
+        <div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <!--MODAL HEADER-->
+                    <div class="modal-header  text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                        <h4 class="modal-title" id="myModalLabel-1">GRADUATION AT ASHTON UNI</h4>
+                        <h6>
+                            <small>Jan 2014 - Mar 2015</small>
+                        </h6>
+                    </div>
+                    <!--MODAL BODY-->
+                    <div class="modal-body">
+                        <img class="img-responsive" alt="graduation"
+                            src="./index_files/demo-gra.jpg">
+                        <p>
+                            I have learned a great many things from participating in varsity football.
+                            It has changed my entire outlook on and attitude toward life. Before my
+                            freshman year at [high-school], I was shy, had low self-esteem and turned
+                            away from seemingly impossible challenges. Football has altered all of these
+                            qualities. On the first day of freshman practice, the team warmed up with a
+                            game of touch football. The players were split up and the game began. However,
+                            during the game, I noticed that I didn't run as hard as I could, nor did I try
+                            to evade my defender and get open. The fact of the matter is that I really did
+                            not want to be thrown the ball. I didn't want to be the one at fault if I dropped
+                            the ball and the play didn't succeed. I did not want the responsibility of helping
+                            the team because I was too afraid of making a mistake. That aspect of my character
+                            led the first years of my high school life. All the while, I went to practice.
+                        </p>
+                    </div>
+                    <!--MODAL FOOTER-->
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--MODAL TWO-->
+        <div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-2">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <!--MODAL HEADER-->
+                    <div class="modal-header  text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                        <h4 class="modal-title" id="myModalLabel-2">EDUCATION AT Y</h4>
+                        <h6>
+                            <small>Jan 2014 - Mar 2015</small>
+                        </h6>
+                    </div>
+                    <!--MODAL BODY-->
+                    <div class="modal-body">
+                        <p>
+                            I have learned a great many things from participating in varsity football.
+                            It has changed my entire outlook on and attitude toward life. Before my
+                            freshman year at [high-school], I was shy, had low self-esteem and turned
+                            away from seemingly impossible challenges. Football has altered all of these
+                            qualities. On the first day of freshman practice, the team warmed up with a
+                            game of touch football. The players were split up and the game began. However,
+                        </p>
+                    </div>
+                    <!--MODAL FOOTER-->
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--MODAL THREE-->
+        <div class="modal fade" id="myModal-3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-3">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <!--MODAL HEADER-->
+                    <div class="modal-header  text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                        <h4 class="modal-title" id="myModalLabel-3">EDUCATION AT Z</h4>
+                        <h6>
+                            <small>Jan 2014 - Mar 2015</small>
+                        </h6>
+                    </div>
+                    <!--MODAL BODY-->
+                    <div class="modal-body">
+                        <img class="img-responsive" alt="graduation"
+                            src="./index_files/demo-gra.jpg">
+                        <p>
+                            I have learned a great many things from participating in varsity football.
+                            It has changed my entire outlook on and attitude toward life. Before my
+                            freshman year at [high-school], I was shy, had low self-esteem and turned
+                            away from seemingly impossible challenges. Football has altered all of these
+                            qualities. On the first day of freshman practice, the team warmed up with a
+                            game of touch football. The players were split up and the game began. However,
+                        </p>
+                    </div>
+                    <!--MODAL FOOTER-->
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--MODAL FOUR-->
+        <div class="modal fade" id="myModal-4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-4">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <!--MODAL HEADER-->
+                    <div class="modal-header  text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                        <h4 class="modal-title" id="myModalLabel-4">EXPERIENCE AT Z</h4>
+                        <h6>
+                            <small>Jan 2014 - Mar 2015</small>
+                        </h6>
+                    </div>
+                    <!--MODAL BODY-->
+                    <div class="modal-body">
+                        <p>
+                            I have learned a great many things from participating in varsity football.
+                            It has changed my entire outlook on and attitude toward life. Before my
+                            freshman year at [high-school], I was shy, had low self-esteem and turned
+                            away from seemingly impossible challenges. Football has altered all of these
+                            qualities. On the first day of freshman practice, the team warmed up with a
+                            game of touch football. The players were split up and the game began. However,
+                        </p>
+                    </div>
+                    <!--MODAL FOOTER-->
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--MODAL FIVE-->
+        <div class="modal fade" id="myModal-5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-5">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <!--MODAL HEADER-->
+                    <div class="modal-header  text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                        <h4 class="modal-title" id="myModalLabel-5">EXPERIENCE AT M</h4>
+                        <h6>
+                            <small>Jan 2014 - Mar 2015</small>
+                        </h6>
+                    </div>
+                    <!--MODAL BODY-->
+                    <div class="modal-body">
+                        <p>
+                            I have learned a great many things from participating in varsity football.
+                            It has changed my entire outlook on and attitude toward life. Before my
+                            freshman year at [high-school], I was shy, had low self-esteem and turned
+                            away from seemingly impossible challenges. Football has altered all of these
+                            qualities. On the first day of freshman practice, the team warmed up with a
+                            game of touch football. The players were split up and the game began. However,
+                        </p>
+                    </div>
+                    <!--MODAL FOOTER-->
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==========================================
+                  PORTFOLIOS
+===========================================-->
+    <section id="portfolios" class="section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <div class="section-title">
+                <h4 class="text-uppercase text-center"><img src="./index_files/safe.png"
+                        alt="demo" data-sr-id="25"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">Project Images
+                </h4>
+            </div>
+            <div id="portfolios-card" class="row" data-sr-id="26"
+                style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+
+                <!--OPTIONS-->
+                <ul class="nav nav-tabs">
+                    <!--ALL CATEGORIES-->
+                    <li class="active waves-effect list-shuffle"><a id="all-sample" class="active"
+                            href="#all" data-toggle="tab">ALL</a>
+                        <!--CATEGORIES-->
+                    </li>
+                    <li class="waves-effect list-shuffle"><a class="cate"
+                            href="#a" data-toggle="tab">MOBILE</a>
+                    </li>
+                    <li class="waves-effect list-shuffle"><a class="cate"
+                            href="#b"
+                            data-toggle="tab">WEB</a></li>
+                    <li class="waves-effect list-shuffle"><a class="cate"
+                            href="#c"
+                            data-toggle="tab">DESKTOP</a></li>
+                </ul>
+
+                <!--CATEGORIES CONTENT-->
+                <div class="tab-content">
+
+                    <!--All CATEGORIES-->
+                    <div id="all"></div>
+
+                    <!--CATEGORY 1-->
+                    <div id="a">
+
+                        <!--CATEGORY CONTENT ONE BIG-->
+                        <div class="col-md-4 col-sm-12 col-xs-12 grid big inLeft">
+                            <figure class="port-effect-scale">
+                                <img src="./index_files/tripsviet.png" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>TRAVEL REVIEW<span> APP</span></h2>
+                                    <p>My Specialized Project - Using JAVA - Rest API with PHP</p>
+                                    <a href="https://www.youtube.com/watch?v=C0LdAo1WhAU&t=18s">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!--CATEGORY CONTENT TWO SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inRight">
+                            <figure class="port-effect-scale">
+                                <img src="./index_files/salesapp.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2></i>Sales Application
+                                    </h2>
+                                    <p>Android Subject Project - Using Java  - Rest API with PHP.</p>
+                                    <a href="https://www.youtube.com/watch?v=j_QFPbusNDE&t=8s">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!--CATEGORY CONTENT THREE SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inRight">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/chatting.png" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Chatting Application</h2>
+                                    <p>Networking Project - Using Network Protocol</p>
+                                    <a href="./index_files/portfolio-2.jpg" class="popup-image"
+                                        data-effect="mfp-move-horizontal">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                    </div>
+
+                    <!--CATEGORY 2-->
+                    <div id="b" class="hide">
+
+                        <!--CATEGORY CONTENT ONE BIG-->
+                        <div class="col-md-4 col-sm-12 col-xs-12 grid big inRight">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/web1.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Website Selling<span> Shoes</span></h2>
+                                    <p>Using C# - ASP .NET MVC - SQL SERVER</p>
+                                    <a href="./index_files/web1.jpg" class="popup-image"
+                                        data-effect="mfp-move-from-top">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!--CATEGORY CONTENT TWO SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inLeft">
+                            <figure class="port-effect-scale">
+                                <img src="./index_files/web2.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Website Selling<span> Shoes</span></h2>
+                                    <p>Web Programming Course Project</p>
+                                    <a href="./index_files/web2.jpg" class="popup-image"
+                                        data-effect="mfp-3d-unfold">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <!--CATEGORY CONTENT THREE SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inLeft">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/web3.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Website Selling<span> Shoes</span></h2>
+                                    <p>Using JAVASCRIPT - BOOTSTRAPP 4 - JQUERY.</p>
+                                    <a href="./index_files/web3.jpg" class="popup-image"
+                                        data-effect="mfp-with-fade">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                    </div>
+
+                    <!--CATEGORY 3-->
+                    <div id="c" class="hide">
+                        <!--CATEGORY CONTENT ONE SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inLeft">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/dt1.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Cafe Management <span> Application</span></h2>
+                                    <p>Java Project - Using Java - No SQL - phpMyAdmin</p>
+                                    <a class="popup-image" href="./index_files/dt1.jpg">View
+                                        more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <!--CATEGORY CONTENT TWO SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inRight">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/dt2.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Cafe Management <span> Application</span></h2>
+                                    <p>Java Project - Using Java - No SQL - phpMyAdmin</p>
+                                    <a class="popup-image" href="./index_files/dt2.jpg">View
+                                        more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <!--CATEGORY CONTENT THREE SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inRight">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/dt3.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Cafe Management <span> Application</span></h2>
+                                    <p>Java Project - Using Java - No SQL - phpMyAdmin</p>
+                                    <a class="popup-image" href="./index_files/dt3.jpg">View
+                                        more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!--CATEGORY CONTENT FOUR SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inLeft">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/dt4.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Cafe Management <span> Application</span></h2>
+                                    <p>Java Project - Using Java - No SQL - phpMyAdmin</p>
+                                    <a class="popup-image" href="./index_files/dt4.jpg">View
+                                        more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <!--CATEGORY CONTENT FIVE SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inRight">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/dt5.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Hotel Management <span> Application</span></h2>
+                                    <p>Winform Project - Using C# - My SQL</p>
+                                    <a class="popup-image" href="./index_files/dt5.jpg">View
+                                        more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <!--CATEGORY CONTENT SIX SMALL-->
+                        <div class="col-md-4 col-sm-6 col-xs-12 grid inLeft">
+                            <figure class="port-effect-up">
+                                <img src="./index_files/dt6.jpg" class="img-responsive"
+                                    alt="portfolio-demo">
+                                <figcaption>
+                                    <h2>Hotel Management <span> Application</span></h2>
+                                    <p>Winform Project - Using C# - My SQL</p>
+                                    <a class="popup-image" href="./index_files/dt6.jpg">View
+                                        more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <!--PORTFOLIOS ADD GALLERY BUTTON-->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <button id="add-more" class="center-block btn-large waves-effect x" data-sr-id="27"
+                            style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: all 0.3s ease-out 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: all 0.3s ease-out 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; "><i
+                                id="port-add-icon" class="fa fa-plus" data-sr-id="28"
+                                style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; "></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==========================================
+                   INTEREST
+===========================================-->
+    <section id="interest" class="section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <div class="section-title">
+                <h4 class="text-uppercase text-center"><img src="./index_files/heart.png"
+                        alt="demo" data-sr-id="29"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">Interest
+                </h4>
+            </div>
+
+            <div id="interest-card" class="card" data-sr-id="30"
+                style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: box-shadow 0.25s ease 0s, -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: box-shadow 0.25s ease 0s, transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                <!--INTEREST TEXT-->
+                <div class="card-content">
+                    <p>
+                        First of all, I love music, I listen to many genres of music. Enjoy watching football, volleyball, badminton, movies and playing games with my friends. I spend a lot of time taking pictures and listening to music, which helps me feel more comfortable. In particular, I like to sleep during work the most, but my conscience does not allow me to do that, not even my boss...hahah
+                    </p>
+                </div>
+
+                <!--INTEREST ICONS-->
+                <div class="row no-gutters">
+
+                    <!--INTEREST ICON ONE-->
+                    <div class="col-md-2 col-sm-4 col-xs-6  box text-center">
+                        <div class="interest-icon" data-sr-id="31"
+                            style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                            <i class="fa fa-music"></i>
+                            <span>Music</span>
+                        </div>
+                    </div>
+                    <!--INTEREST ICON TWO-->
+                    <div class="col-md-2 col-sm-4 col-xs-6 box text-center">
+                        <div class="interest-icon-even" data-sr-id="32"
+                            style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                            <i class="fa fa-gamepad"></i>
+                            <span>Gaming</span>
+                        </div>
+                    </div>
+                    <!--INTEREST ICON THREE-->
+                    <div class="col-md-2 col-sm-4 col-xs-6 box text-center">
+                        <div class="interest-icon" data-sr-id="33"
+                            style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                            <i class="fa fa-camera"></i>
+                            <span>Photography</span>
+                        </div>
+                    </div>
+                    <!--INTEREST ICON FOUR-->
+                    <div class="col-md-2 col-sm-4 col-xs-6 box text-center">
+                        <div class="interest-icon-even" data-sr-id="34"
+                            style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                            <i class="fa-solid fa-volleyball"></i>
+                            <span>Volleyball</span>
+                        </div>
+                    </div>
+                    <!--INTEREST ICON FIVE-->
+                    <div class="col-md-2 col-sm-4 col-xs-6 box text-center">
+                        <div class="interest-icon" data-sr-id="35"
+                            style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                            <i class="fa fa-plane"></i>
+                            <span>Traveling</span>
+                        </div>
+                    </div>
+                    <!--INTEREST ICON SIX-->
+                    <div class="col-md-2 col-sm-4 col-xs-6 box text-center">
+                        <div class="interest-icon-even" data-sr-id="36"
+                            style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                            <i class="fa fa-film"></i>
+                            <span>Movies</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--==========================================
+             BLOG
+===========================================-->
+    <section id="blog" class="section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <div class="section-title">
+                <h4 class="text-uppercase text-center"><img src="./index_files/post-it.png"
+                        alt="demo" data-sr-id="44"
+                        style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">Blog
+                </h4>
+            </div>
+            <div id="blog-card" class="row" data-sr-id="45"
+                style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1.1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                <div class="col-md-12 col-sm-12">
+                    <div class="card">
+                        <!--BLOG ODD-->
+                        <div class="blog odd">
+                            <!--IMAGE-->
+                            <div class="image">
+                                <img alt="blog-image" src="./index_files/bl1.jpg">
+                                <div class="image-overlay">
+                                    <div class="comments">
+                                        <i class="fa fa-user"></i> Thang Cao
+                                        <i class="fa fa-clock-o">14:00</i>
+                                        <time datetime="2045-08-16">2021</time>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DETAILS-->
+                            <div class="content">
+                                <ol class="breadcrumb">
+                                    <li>HUTECH
+                                    </li>
+                                    <li>INFORMATION TECHNOLOGY
+                                    </li>
+                                </ol>
+                                <h6>SV5T Awards Ceremony</h6>
+                                <p>
+                                    Even though I'm a student who doesn't work very hard in my studies, I have constantly tried to leave something beautiful in my student life.
+                                </p>
+                            </div>
+                        </div>
+                        <!--BLOG EVEN-->
+                        <div class="blog even">
+                            <!--IMAGE-->
+                            <div class="image">
+                                <img alt="blog-image" src="./index_files/bl3.jpg">
+                                <div class="image-overlay">
+                                    <div class="comments">
+                                        <i class="fa fa-user"></i>Thang Cao
+                                        <i class="fa fa-clock-o"></i>
+                                        <time datetime="2045-08-16">May 13, 2029</time>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DETAILS-->
+                            <div class="content">
+                                <ol class="breadcrumb">
+                                    <li><a href="#">My Friends</a>
+                                    </li>
+                                    <li><a href="#">18DTHE3</a></li>
+                                </ol>
+                                <h6>18DTHE3 My Class</h6>
+                                <p>
+                                    These are my friends in class 18DTHE3. Four years have passed so quickly, leaving behind both happy and sad memories. In the future, everyone has their own career path, their own love, their own life,... Hopefully, we all don't forget each other after graduation. Love everyone!
+                                </p>
+                            </div>
+                        </div>
+                        <!--BLOG ODD-->
+                        <div class="blog odd">
+                            <!--IMAGE-->
+                            <div class="image">
+                                <img alt="blog-image" src="./index_files/bl2.jpg">
+                                <div class="image-overlay">
+                                    <div class="comments">
+                                        <i class="fa fa-user"></i>Thang Cao
+                                        <i class="fa fa-clock-o"></i>
+                                        <time datetime="2045-08-16">Dec 28, 2020</time>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DETAILS-->
+                            <div class="content">
+                                <ol class="breadcrumb">
+                                    <li>
+                                        KEIKO CLUB
+                                    </li>
+                                    <li>
+                                        Arts Club
+                                    </li>
+                                </ol>
+                                <h6>Beautiful Memories</h6>
+                                <p>
+                                    KEIKO can be called my second home. There, I met my friends. They not only teach me many things, help me develop myself more comprehensively, but also make me feel that student life is fun, happy and meaningful.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==========================================
+                  CONTACT
+===========================================-->
+    <section id="contact" class="section">
+        <div class="container">
+            <h5 style="text-align: center;">Thanks for watching. Please contact me! Love you so much !</h5>
+        </div>
+        
+    </section>
+
+    <!--==========================================
+                     SCROLL TO TOP
+===========================================-->
+    <div id="scroll-top">
+        <div id="scrollup" class="animated flipInY" style="display: block;"><i class="fa fa-angle-up"></i></div>
+    </div>
+
+    <!--==========================================
+                      FOOTER
+===========================================-->
+
+    <footer>
+        <div class="container">
+            <!--FOOTER DETAILS-->
+            <p class="text-center">
+                2022 © Thang Cao with love
+            </p>
+        </div>
+    </footer>
+
+
+    <!--==========================================
+                  SCRIPTS
+===========================================-->
+    <script src="./index_files/jquery-2.1.3.min.js.download"></script>
+    <script src="./index_files/bootstrap.min.js.download"></script>
+    <script src="./index_files/materialize.min.js.download"></script>
+    <script src="./index_files/js"></script>
+    <script src="./index_files/markerwithlabel.min.js.download"></script>
+    <script src="./index_files/retina.min.js.download"></script>
+    <script src="./index_files/scrollreveal.min.js.download"></script>
+    <script src="./index_files/swiper.jquery.min.js.download"></script>
+    <script src="./index_files/jquery.magnific-popup.min.js.download"></script>
+    <script src="./index_files/custom-dark.js.download"></script>
+
+
+
+    <div class="hiddendiv common"></div>
+</body>
+
+</html>
